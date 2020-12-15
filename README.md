@@ -51,5 +51,23 @@
 5. <a href="https://github.com/wzslr321/flutter_guide"> Padding </a> 
 6. <a href="https://github.com/wzslr321/flutter_guide"> SizedBox </a>
 
+***
 
+### Introduction 
 
+<p> I assume that you have already installed flutter and device/emulator configured, If not, check how to do it <a href ="https://flutter.dev/docs/get-started/install"> here </a>
+
+<b> Commands: </b> 
+
+* `flutter create app_name` --> Creates a new flutter project, space should always be replaced with `_`
+* `flutter doctor` --> Helps to diagnose issues with setup. 
+* `flutter run` --> Builds an application and run it on your configured device or emulator. 
+* `flutter pub get` --> Installs new packages, will be useful in <i> Packages Usage </i> section.
+* `Shift + R` --> Hot restart - used in the same way as reload, fully resets application - recommended when bigger changes have been made
+* `R` --> Hot reload - keyboard shortcut available in terminal when application is running, reloads the app
+
+> Depending on the IDE you are using, the commands above may be accessible as icons, if you have flutter extension. More about it can be found <a href="https://flutter.dev/docs/get-started/editor?tab=androidstudio"> here </a> 
+
+#
+
+### Stateless and Stateful widgets
