@@ -53,11 +53,13 @@
 
 ***
 
-### Introduction 
+## Introduction 
 
 <p> I assume that you have already installed flutter and device/emulator configured, If not, check how to do it <a href ="https://flutter.dev/docs/get-started/install"> here </a>
 
-<b> Commands: </b> 
+<br/>
+
+### Commands:
 
 * `flutter create app_name` --> Creates a new flutter project, space should always be replaced with `_`
 * `flutter doctor` --> Helps to diagnose issues with setup. 
@@ -71,3 +73,64 @@
 #
 
 ### Stateless and Stateful widgets
+
+<b/>
+
+<p> 
+  <b> Stateless </b> widget is immutable, there is no possibility to use `setState` function and change content of the screen. It is built once, and stays as it       is - cannot change its state during the runtime of the app, in simple words, it can't be redrawn during the runtime.
+</p>
+
+<b> Example: </b> 
+
+```dart
+import 'package:flutter/material.dart';
+
+class ClassNameGoesHere extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Text("Hello world!");
+  }
+}
+```
+
+<b/>
+
+First line `import 'package:flutter/material.dart'` is required, it gives a possibility to use Material widgets and to create Material UI design 
+It returns a widget tree, more about it in the next section. 
+
+#
+
+<p> 
+  <b> Stateful </b> widget lets you display data that changes and update UI. Simplest method to do it is `setState` function, when it is triggered it acts like: "Hey, something changed, rebuild is needed!". It can be triggered in, for example `GestureDetector` widget.
+</p>
+
+<b> Example: </b> 
+
+```dart
+import 'package:flutter/material.dart';
+
+class ClassNameGoesHere extends StatefulWidget {
+  @override
+  _ClassNameGoesHereState createState() => _ClassNameGoesHereState();
+}
+
+class _ClassNameGoesHereState extends State<ClassNameGoesHere> {
+  int count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          count++;
+        });
+      },
+      child: Text("$count"),
+    );
+  }
+}
+```
+
+<br/>
+
+  In the code above we use basic Stateful WIdget skeleton, which is always the same, so don't be scared. We declare variable count of type int, which by default is equal to 0. We display it as a child of <b> Gesture detector </b> in <b> Text </b> widget. GestureDetector lets us to use `onTap()` function where we decided to use `setState` function mentioned before. It tells the flutter *"Hey! variable count changed!"*. It notes this change and rebuilds data showing us a number increased by 1 with every tap!
