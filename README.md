@@ -95,14 +95,12 @@ class ClassNameGoesHere extends StatelessWidget {
 
 <br/>
 
-First line `import 'package:flutter/material.dart'` is required, it gives a possibility to use Material widgets and to create Material UI design 
-It returns a widget tree, more about it in the next section. 
+First line `import 'package:flutter/material.dart'` is required, it gives a possibility to use Material widgets and to create Material UI design. Stateless widget returns a widget tree, more about it in the next section. 
 
 #
 
-<p> 
   <b> Stateful </b> widget lets you display data that changes and update UI. Simplest method to do it is `setState` function, when it is triggered it acts like: "Hey, something changed, rebuild is needed!". It can be triggered in, for example `GestureDetector` widget.
-</p>
+
 
 <b> Example: </b> 
 
