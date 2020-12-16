@@ -26,7 +26,7 @@
   * Before start
   * Terminal commands
   * What are Stateless and Stateful widgets 
-  * iOS and Android widgets differences
+  * How to use iOS-style widgets
 * Widgets
   * Table of widgets is located below the table of contents
 * Packages usage
@@ -144,3 +144,21 @@ class _ClassNameGoesHereState extends State<ClassNameGoesHere> {
 <br/>
 
   In the code above we use basic Stateful WIdget skeleton, which is always the same, so don't be scared. We declare variable count of type int, which by default is equal to 0. We display it as a child of <b> Gesture detector </b> in <b> Text </b> widget. GestureDetector lets us to use `onTap()` function where we decided to use `setState` function mentioned before. It tells the flutter *"Hey! variable count changed!"*. It notes this change and rebuilds data showing us a number increased by 1 with every tap!
+
+<br/>
+
+#
+
+### How to use iOS-style widgets
+
+<br/>
+
+> <i> "Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase." </i>
+<br/>
+
+Although, it gives a possibility to use different widgets on Android and iOS. With usage of `dart:io` package, we are able to check, on what device app is actually running. You can find more about how to do it <a href="https://api.dart.dev/stable/2.10.4/dart-io/Platform-class.html"> here </a>.
+In our code we can than use iOS style widgets <a href ="https://flutter.dev/docs/development/ui/widgets/cupertino"> Cupertino </a>. Of course it doesn't mean that we have to check OS before every single widget, but just when we want to. 
+<p>
+Unfortunetely it is impossible to test an application on iOS and Android without having both MacOS and Linux/Windows, so in this guide only <i> Material </i> widgets will be shown.
+</p>
+
