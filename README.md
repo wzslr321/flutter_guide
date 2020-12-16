@@ -22,13 +22,13 @@
 ---
 
 <b> Table of Contents </b>
-* Introduction text
+* Introduction 
   * Before start
   * Terminal commands
   * What are Stateless and Stateful widgets 
   * How to use iOS-style widgets
 * Widgets
-  * Table of widgets is located below the table of contents
+  * Table of most useful widgets is located below the Introduction
 * Packages usage
   * Pubspec.yaml file description 
   * pub.dev usage
@@ -41,15 +41,6 @@
   * Display JSON data on the screen 
   * Authorization with Firebase
 
-#
-
-<b> Table of widgets </b>
-1. <a href="https://github.com/wzslr321/flutter_guide"> Scaffold </a>
-2. <a href="https://github.com/wzslr321/flutter_guide"> Container </a>
-3. <a href="https://github.com/wzslr321/flutter_guide"> Text </a> 
-4. <a href="https://github.com/wzslr321/flutter_guide"> Fitted Box </a> 
-5. <a href="https://github.com/wzslr321/flutter_guide"> Padding </a> 
-6. <a href="https://github.com/wzslr321/flutter_guide"> SizedBox </a>
 
 ***
 
@@ -167,34 +158,9 @@ Unfortunetely it is impossible to test an application on iOS and Android without
 ## Widgets 
 
 <br/>
-<p align = "center"> <b> <i> Every widget's title is also a reference to its official documentation, in case you want to learn more about it. </i> </b> </p>
+<p align = "center"> <b> <i> Every widget's title is a reference to its official documentation, which is really great, in case when you know what you are looking for.  </i> </b> </p>
 <br/>
 
-<b>1.</b> <a href="https://api.flutter.dev/flutter/material/Scaffold-class.html"> Scaffold </a>
-
-* "Implements the basic material design visual layout structure." Its two most common used widgets are `AppBar` and `Body`. 
-<br/>
-<b> Example: </b> 
-
-<br/>
-
-```dart
-import 'package:flutter/material.dart';
-
-class MyFirstScaffold extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar:AppBar(
-        title: Text("My AppBar"),
-      ),
-        body: const Text("Body of my app!"),
-    );
-  }
-}
-```
-
-<br/>
 
 It is worth to mention that we can use `const` before our widgets, if we are sure that it is not going to change. It will prevent app from bulding it every time, and improve a performance of our app a little bit!
 
@@ -203,3 +169,15 @@ It is worth to mention that we can use `const` before our widgets, if we are sur
 :heavy_check_mark: --> `const Text("It is not going to change, so it is working!")` 
 <br/>
 :x: --> `const Text("$someVariable")` Variable, as name says, can be changed, so we can't use it, <b> unless it is of type `const` also! </b>
+
+#
+
+### Table of widgets 
+* <b>1.</b> <a href="https://api.flutter.dev/flutter/material/Scaffold-class.html"> Scaffold </a>
+* <b>2.</b> <a href="https://api.flutter.dev/flutter/widgets/Container-class.html"> Container </a>
+* <b>3.</b> <a href="https://api.flutter.dev/flutter/dart-html/Text-class.html"> Text </a>
+* <b>4.</b> <a href="https://api.flutter.dev/flutter/widgets/FittedBox-class.html"> Fitted Box </a>
+* <b>5.</b> <a href="https://api.flutter.dev/flutter/widgets/SizedBox-class.html"> SizedBox  </a>
+* <b>6.</b> <a href="https://api.flutter.dev/flutter/widgets/Padding-class.html"> Padding </a>
+
+
