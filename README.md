@@ -74,7 +74,7 @@
 
 ### Stateless and Stateful widgets
 
-<b/>
+<br/>
 
 <p> 
   <b> Stateless </b> widget is immutable, there is no possibility to use `setState` function and change content of the screen. It is built once, and stays as it       is - cannot change its state during the runtime of the app, in simple words, it can't be redrawn during the runtime.
@@ -93,7 +93,7 @@ class ClassNameGoesHere extends StatelessWidget {
 }
 ```
 
-<b/>
+<br/>
 
 First line `import 'package:flutter/material.dart'` is required, it gives a possibility to use Material widgets and to create Material UI design 
 It returns a widget tree, more about it in the next section. 
