@@ -23,10 +23,10 @@
 
 <b> Table of Contents </b>
 * Introduction text
+  * Before start
   * Terminal commands
   * What are Stateless and Stateful widgets 
   * iOS and Android widgets differences
-  * Useful resources
 * Widgets
   * Table of widgets is located below the table of contents
 * Packages usage
@@ -58,6 +58,18 @@
 <p> I assume that you have already installed flutter and device/emulator configured, If not, check how to do it <a href ="https://flutter.dev/docs/get-started/install"> here </a>
 
 <br/>
+
+### Before start
+
+I really recommend to get basic knowledge in <b> Dart </b> language before before proceeding with this guide.
+Trying to learn Flutter without any knowledge of the Dart lang is very common mistake, which makes it harder. 
+<br/>
+Here are two sites I do recommend to get started with: 
+* <a href="https://dart.dev/guides"> Official Dart site </a>
+* <a href="http://jpryan.me/dartbyexample/"> DartByExample </a> - really cool if you have experience with any other language
+
+
+#
 
 ### Commands:
 
@@ -99,7 +111,7 @@ First line `import 'package:flutter/material.dart'` is required, it gives a poss
 
 #
 
-  <b> Stateful </b> widget lets you display data that changes and update UI. Simplest method to do it is `setState` function, when it is triggered it acts like: "Hey, something changed, rebuild is needed!". It can be triggered in, for example `GestureDetector` widget.
+  <b> Stateful </b> widget lets you display data that changes and update UI. Simplest method to do it is `setState` function, when it is triggered it acts like: <i> "Hey, something changed, rebuild is needed!". </i> It can be triggered in, for example `GestureDetector` widget.
 
 
 <b> Example: </b> 
