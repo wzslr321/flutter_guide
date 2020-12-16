@@ -162,3 +162,44 @@ In our code we can than use iOS style widgets <a href ="https://flutter.dev/docs
 Unfortunetely it is impossible to test an application on iOS and Android without having both MacOS and Linux/Windows, so in this guide only <i> Material </i> widgets will be shown.
 </p>
 
+***
+
+## Widgets 
+
+<br/>
+<p align = "center"> <b> <i> Every widget's title is also a reference to its official documentation, in case you want to learn more about it. </i> </b> </p>
+<br/>
+
+<b>1.</b> <a href="https://api.flutter.dev/flutter/material/Scaffold-class.html"> Scaffold </a>
+
+* "Implements the basic material design visual layout structure." Its two most common used widgets are `AppBar` and `Body`. 
+<br/>
+<b> Example: </b> 
+
+<br/>
+
+```dart
+import 'package:flutter/material.dart';
+
+class MyFirstScaffold extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar:AppBar(
+        title: Text("My AppBar"),
+      ),
+        body: const Text("Body of my app!"),
+    );
+  }
+}
+```
+
+<br/>
+
+It is worth to mention that we can use `const` before our widgets, if we are sure that it is not going to change. It will prevent app from bulding it every time, and improve a performance of our app a little bit!
+
+<br/>
+
+:heavy_check_mark: --> `const Text("It is not going to change, so it is working!")` 
+<br/>
+:x: --> `const Text("$someVariable")` Variable, as name says, can be changed, so we can't use it, <b> unless it is of type `const` also! </b>
