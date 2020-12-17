@@ -206,3 +206,105 @@ It is worth to mention that we can use `const` before our widgets, if we are sur
   <i> That is only a small part of all available widgets, I encourage you to check out <a target = "blank" href="https://github.com/annshsingh/FlutterWidgetGuide"> this </a>  great repository for more useful widgets! </i>
 </p>
 
+<br/>
+
+### We can also create our <b> Reusable Custom Widgets! </b> 
+<br/>
+
+Let's say that we have 3 exactly the same buttons in our application. The only difference is text isnide. With custom widget, we can split our code, <b> so it looks like this in those 3 spots: </b>
+```dart
+DefaultButtonWidgetFirst(
+   textContent: "Hello world!",
+)
+```
+
+<br/>
+
+<b> Insted of this: </b>
+```dart
+Container(
+    width: queryData.size.width * 0.5,
+    height: queryData.size.height * 0.25,
+    child:FlatButton(
+      onPressed: () {}, // Does nothing for now, but is required
+      child: Text(
+        "$textContent",
+        style: TextStyle(
+          fontSize: 16,
+          color: Colors.cyan,
+        ),
+      ),
+    ),
+);
+```
+<br/>
+
+> So... How can we do it?
+
+<br/>
+
+In separate file, we create Stateless or Stateful widget, stateless in this case. <br/> <br/>
+Than we declare variables which it takes as arguments everytime when is used. <br/> <br/>
+We use <b> final </b> variable type, because it is going to be declared only once during a runtime, and we specify its type. <br/> <br/>
+<b> Example: </b> `final String textContent;` <br/> <br/>
+Than, we have two ways of declaring arguments.
+* <b> 1. </b> Named arguments with usage of "{}"
+```dart
+const DefaultButtonWidgetFirst({
+   this.textContent,
+});
+```
+
+<br/>
+
+<b> this keyword </b> refers to final variable we created before.
+
+With named arguments, we than use this widget specyfing every agument by its name. Named arguments are not required by default! Although, we can set it to required with `@required` decorator from material package, so it looks like that: 
+```dart
+const DefaultButtonWidgetSecond({
+   @required this.textContentSecond,
+});
+```
+
+
+
+* <b> 2. </b> Un-named arguments, without "{}", those are always required! 
+```dart
+  const DefaultButtonWidgetThird(this.textContentThird);
+```
+
+<br/>
+
+When we use a custom widget with un-named arguments, we declare arguments <b> in sequence </b>, so un-named arguments are useful only when we deal with small amount of them, and we are sure that we will remember their sequence.
+
+<br/>
+
+Now we can use this widget wherever we want. <br/>
+First we need to import a file with our widge on top of our file, where we want to use it, in my case : `import './widgets/custom_button.dart';`
+Now we can use it in our code:
+```dart
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("My app"),
+      ),
+      body: Column(
+        children: [
+          DefaultButtonWidgetFirst(
+            textContent: "Hello world!",
+          ),
+          DefaultButtonWidgetSecond(
+            textContentSecond: "Hello world 2!",
+          ),
+          DefaultButtonWidgetThird('Hello world 3!')
+        ],
+      ),
+    );
+  }
+}
+```
+<br/>
+
+#### Code with this example can be found <a href = "https://github.com/wzslr321/flutter_guide/" > here </a>
