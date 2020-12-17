@@ -4,7 +4,7 @@
      It is intended for everyone who is <b>new or intermediate </b> in Flutter. It covers its most useful widgets and  concepts.
      First part of the tutorial shows examples with code sniipets, and defintions to make everything <b> as clear as possible. </b>
      Second part sums up all the content introduced before and shows how to create <b> multi-screen application with user's authorization </b> step-by-step.
-     Code associated to the guide can be found <a href = "https://github.com/wzslr321/flutter_guide"> here </a>.
+     Code associated to the guide can be found <a target="blank" href = "https://github.com/wzslr321/flutter_guide"> here </a>.
      <b>Every pull-request and help to improve this repository is welcome and really appreciated.</b>
   </i>
 </p>
@@ -56,8 +56,8 @@ I really recommend to get basic knowledge in <b> Dart </b> language before befor
 Trying to learn Flutter without any knowledge of the Dart lang is very common mistake, which makes it harder. 
 <br/>
 Here are two sites I do recommend to get started with: 
-* <a href="https://dart.dev/guides"> Official Dart site </a>
-* <a href="http://jpryan.me/dartbyexample/"> DartByExample </a> - really cool if you have experience with any other language
+* <a target="blank" href="https://dart.dev/guides"> Official Dart site </a>
+* <a target="blank" href="http://jpryan.me/dartbyexample/"> DartByExample </a> - really cool if you have experience with any other language
 
 
 #
@@ -71,7 +71,7 @@ Here are two sites I do recommend to get started with:
 * `Shift + R` --> Hot restart - used in the same way as reload, fully resets application - recommended when bigger changes have been made
 * `R` --> Hot reload - keyboard shortcut available in terminal when application is running, reloads the app
 
-> Depending on the IDE you are using, the commands above may be accessible as icons, if you have flutter extension. More about it can be found <a href="https://flutter.dev/docs/get-started/editor?tab=androidstudio"> here </a> 
+> Depending on what IDE you are using, the commands above may be accessible as icons, if you have flutter extension. More about it can be found <a target="blank"  href="https://flutter.dev/docs/get-started/editor?tab=androidstudio"> here </a> 
 
 #
 
@@ -172,12 +172,37 @@ It is worth to mention that we can use `const` before our widgets, if we are sur
 
 #
 
-### Table of widgets 
-* <b>1.</b> <a href="https://api.flutter.dev/flutter/material/Scaffold-class.html"> Scaffold </a>
-* <b>2.</b> <a href="https://api.flutter.dev/flutter/widgets/Container-class.html"> Container </a>
-* <b>3.</b> <a href="https://api.flutter.dev/flutter/dart-html/Text-class.html"> Text </a>
-* <b>4.</b> <a href="https://api.flutter.dev/flutter/widgets/FittedBox-class.html"> Fitted Box </a>
-* <b>5.</b> <a href="https://api.flutter.dev/flutter/widgets/SizedBox-class.html"> SizedBox  </a>
-* <b>6.</b> <a href="https://api.flutter.dev/flutter/widgets/Padding-class.html"> Padding </a>
+### Table of most common used widgets (By me at least)
 
+* <b>1.</b> <a target="blank" href="https://api.flutter.dev/flutter/material/Scaffold-class.html"> Scaffold </a>
+* <b>2.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/Container-class.html"> Container </a>
+* <b>3.</b> <a target="blank" href="https://api.flutter.dev/flutter/dart-html/Text-class.html"> Text </a>
+* <b>4.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/Row-class.html"> Row </a>
+* <b>5.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/Column-class.html"> Column </a>
+* <b>6.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/FittedBox-class.html"> Fitted Box </a>
+* <b>7.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/SizedBox-class.html"> SizedBox  </a>
+* <b>8.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/ListView-class.html"> ListView</a>
+* <b>9.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/SingleChildScrollView-class.html"> SingleChildScrollView </a>
+* <b>10.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/GridView-class.html"> GridView </a>
+* <b>11.</b> <a target="blank" href="https://api.flutter.dev/flutter/material/Drawer-class.html"> Drawer </a>
+* <b>12.</b> <a target="blank" href="https://api.flutter.dev/flutter/material/InkWell-class.html"> InkWell </a>
+* <b>13.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/Stack-class.html"> Stack </a>
+* <b>14.</b> <a target="blank" href="https://api.flutter.dev/flutter/material/Card-class.html"> Card </a>
+* <b>15.</b> <a target="blank" href="https://api.flutter.dev/flutter/material/FlatButton-class.html"> FlatButton </a> (There are lots of button widgets available)
+* <b>16.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/Icon-class.html"> Icon </a>
+* <b>17.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/Form-class.html"> Form </a>
+* <b>18.</b> <a target="blank" href="https://api.flutter.dev/flutter/material/CircleAvatar-class.html"> CircleAvatar  </a>
+* <b>19.</b> <a target="blank" href="https://api.flutter.dev/flutter/dart-ui/Image-class.html"> Image </a>
+* <b>20.</b> <a target="blank" href="https://api.flutter.dev/flutter/material/Divider-class.html"> Divider </a>
+* <b>21.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/Dismissible-class.html"> Dismissible </a>
+* <b>22.</b> <a target="blank" href="https://api.flutter.dev/flutter/material/showDialog.html"> ShowDialog </a> (Actually it is a function)
+* <b>23.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/Spacer-class.html"> Spacer </a>
+* <b>24.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/Expanded-class.html"> Expanded </a>
+* <b>25.</b> <a target="blank" href="https://api.flutter.dev/flutter/widgets/Padding-class.html"> Padding </a>
+
+<br/>
+
+<p align="center"> 
+  <i> That is only a small part of all available widgets, I encourage you to check out <a target = "blank" href="https://github.com/annshsingh/FlutterWidgetGuide"> this </a>  great repository for more useful widgets! </i>
+</p>
 
