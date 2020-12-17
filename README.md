@@ -307,4 +307,4 @@ class MyHomePage extends StatelessWidget {
 ```
 <br/>
 
-#### Code with this example can be found <a href = "https://github.com/wzslr321/flutter_guide/" > here </a>
+#### Code with this example can be found <a href = "https://github.com/wzslr321/flutter_guide/tree/main/lib/reusable_widgets_example" > here </a>
