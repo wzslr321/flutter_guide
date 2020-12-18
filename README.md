@@ -31,7 +31,7 @@
   * Table of most useful widgets is located below the Introduction
 * Packages and fonts usage
   * Pubspec.yaml file description 
-* Upload own fonts and images
+  * Upload own fonts and images
 * Routes
 * State management 
   * Stateful widget 
@@ -356,5 +356,14 @@ fonts:
      - asset: fonts/Schyler-Regular.ttf // path to our font
      - asset: fonts/Schyler-Italic.ttf
         style: italic
+```
+
+<br/>
+
+```yaml
+flutter:
+  assets:
+    - assets/my_icon.png // path to our image or any other asset.
+    - assets/background.png
 ```
 <br/>
