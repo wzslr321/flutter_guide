@@ -1,7 +1,7 @@
 <h2 align = "center"> Flutter starter guide for newbies </h1>
 <p align = "center">
   <i>
-     It is intended for everyone who is <b>new or intermediate </b> in Flutter. It covers its most useful widgets and  concepts.
+     It is intended for everyone who is <b>new </b> in Flutter. It covers its most useful widgets and  concepts.
      First part of the tutorial shows examples with code sniipets, and defintions to make everything <b> as clear as possible. </b>
      Second part sums up all the content introduced before and shows how to create <b> multi-screen application with user's authorization </b> step-by-step.
      Code associated to the guide can be found <a target="blank" href = "https://github.com/wzslr321/flutter_guide"> here </a>.
@@ -29,9 +29,8 @@
   * How to use iOS-style widgets
 * Widgets
   * Table of most useful widgets is located below the Introduction
-* Packages usage
+* Packages and fonts usage
   * Pubspec.yaml file description 
-  * pub.dev usage
 * Upload own fonts and images
 * Routes
 * State management 
@@ -80,7 +79,7 @@ Here are two sites I do recommend to get started with:
 <br/>
 
 <p> 
-  <b> Stateless </b> widget is immutable, there is no possibility to use `setState` function and change content of the screen. It is built once, and stays as it       is - cannot change its state during the runtime of the app, in simple words, it can't be redrawn during the runtime.
+  <b> Stateless </b> widget is immutable, there is no possibility to change content of the screen unless we reload app. It is built once, and stays as it is - cannot change its state during the runtime of the app, in simple words, it can't be redrawn during the runtime.
 </p>
 
 <b> Example: </b> 
@@ -308,3 +307,43 @@ class MyHomePage extends StatelessWidget {
 <br/>
 
 #### Code with this example can be found <a href = "https://github.com/wzslr321/flutter_guide/tree/main/lib/reusable_widgets_example" > here </a>
+
+#
+
+### Packages usage
+
+<br/>
+
+There are awesome packages that we can use in our code really easily and can be found <a href="https://pub.dev/"> here! </a> <br/> <br/>
+<p align="center"> <b> How to use them? </b> </p> <br/>
+
+Packages, fonts, images have to be specified in <b> <a href="https://dart.dev/tools/pub/pubspec"> pubspec.yaml </a> </b> file, which containts metadata required to specify dependencies.It is very restrictive and care even about spaces.
+To require dependencies we must find this part of code: 
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+```
+
+Now we can declare packages we want under each other, by specyfing a name and version, which we can see on its pub.dev page. </br>
+Example of <a href = "https://pub.dev/packages/http/install"> http </a> package usage.
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.12.2
+```
+
+<br/> 
+<b> Remember about right spacing! </b>
+
+<p> In this file we can also declare other assets, like fonts and images. Examples of it are already in builded pubspec.yaml file.
+
+```yaml
+fonts:
+ - family: Schyler
+   fonts:
+     - asset: fonts/Schyler-Regular.ttf // path to our font
+     - asset: fonts/Schyler-Italic.ttf
+        style: italic
+```
