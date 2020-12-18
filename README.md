@@ -308,25 +308,34 @@ class MyHomePage extends StatelessWidget {
 
 #### Code with this example can be found <a href = "https://github.com/wzslr321/flutter_guide/tree/main/lib/reusable_widgets_example" > here </a>
 
-#
+***
 
 ### Packages usage
+
+#
 
 <br/>
 
 There are awesome packages that we can use in our code really easily and can be found <a href="https://pub.dev/"> here! </a> <br/> <br/>
-<p align="center"> <b> How to use them? </b> </p> <br/>
+<p align="center"> <b> How to use them? </b> </p>
+
+#
 
 Packages, fonts, images have to be specified in <b> <a href="https://dart.dev/tools/pub/pubspec"> pubspec.yaml </a> </b> file, which containts metadata required to specify dependencies.It is very restrictive and care even about spaces.
 To require dependencies we must find this part of code: 
+
+<br/>
+
 ```yaml
 dependencies:
   flutter:
     sdk: flutter
 ```
+<br/>
 
 Now we can declare packages we want under each other, by specyfing a name and version, which we can see on its pub.dev page. </br>
 Example of <a href = "https://pub.dev/packages/http/install"> http </a> package usage.
+<br/>
 ```yaml
 dependencies:
   flutter:
@@ -338,7 +347,8 @@ dependencies:
 <b> Remember about right spacing! </b>
 
 <p> In this file we can also declare other assets, like fonts and images. Examples of it are already in builded pubspec.yaml file.
-
+<br/>
+  
 ```yaml
 fonts:
  - family: Schyler
@@ -347,3 +357,4 @@ fonts:
      - asset: fonts/Schyler-Italic.ttf
         style: italic
 ```
+<br/>
