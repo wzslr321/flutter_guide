@@ -392,3 +392,93 @@ flutter:
 #
 
 <br/>
+
+Routing in Flutter is really simple and in my opinion, well organised. 
+
+<br/>
+
+At first, in our <b> main.dart </b> file, in <i> MaterialApp </i> we have to register them and set home screen, optionally unknownRoute also. 
+
+```dart
+return MaterialApp(
+  title: 'Flutter Guide',
+  home: // First screen will go here!
+   routes:{
+    // Most of the next here.
+   },
+   onUnknownRoute: (settings) {
+     return // And finally PageNotFoundScreen is going to be here!
+   },
+);
+```
+
+<br/>
+
+> This is my project structure 
+
+```bash
+--routes_example
+  -- screens
+     -- first_screen.dart
+     -- page_not_found_screen.dart
+     -- second_screen.dart
+  -- main.dart
+```
+
+<br/>
+
+To register our route, first we need to specify its name. The best way to do this is a `static const` - dart feature. It will prevent from misspelling the route in the code. We should do it at the beggining of our Stateless/Stateful widget. 
+
+```dart
+class FirstScreen extends StatelessWidget {
+  static const routeName = 'first-screen';
+  
+  // ...Rest of the code goes here
+}
+```
+
+<br/>
+
+Now, with help of our static const, we can register it in our previous <i> main.dart </i> code. 
+
+```dart
+return MaterialApp(
+  title: 'Flutter Guide',
+  home: FirstScreen(), // home screen is visible when our app start, we can specify only one. 
+    routes:{
+      SecondScreen.routeName:(ctx) => SecondScreen(),
+      // We access our static const like class method, after ' . ' 
+      // With received context (ctx) we than call our widget. 
+      // It is possible to register as many routes as we want here.
+    },
+    onUnknownRoute: (settings) {
+      return MaterialPageRoute(builder: (ctx) => PageNotFoundScreen());
+      // We can specify unknown route only once too. 
+      // It is mostly useful in web applications.  
+    },
+);
+```
+
+<br/>
+
+With our routes registered properly, we can now use them in our code to make functionality of displaying different screens.
+<br/>
+For this, we can use <b> Navigator </b>, and more specifically <b> <i> Navigator.of(context).pushNamed() </i> </b> in this case. 
+We can invoke this function for example, with help of simple button.
+
+```dart
+ElevatedButton(
+    child: Text("Second screen"),
+    onPressed:() {
+       Navigator.of(context).pushNamed(SecondScreen.routeName);
+       // To use SecondScreen.routeName we need to import this on top of the file. 
+    },
+),
+``` 
+
+<br/>
+
+It will display SecondScreen when we tap on a button and place it on a <b> Stack of screens </b>, and will automatically display an arrow button in AppBar, which gives a possibility to go back - to the previous screen. 
+<br/>
+<br/>
+<b> <i> Code for this example can be found <a href ="https://github.com/wzslr321/flutter_guide/tree/main/lib/routes_example"> here </a> 
