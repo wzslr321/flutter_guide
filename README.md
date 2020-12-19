@@ -3,7 +3,7 @@
   <i>
      It is intended for everyone who is <b>new </b> in Flutter. It covers its most useful widgets and  concepts.
      First part of the tutorial shows examples with code sniipets, and defintions to make everything <b> as clear as possible. </b>
-     Second part sums up all the content introduced before and shows how to create <b> multi-screen application with user's authorization </b> step-by-step.
+     Second part sums up all the content introduced before and shows how to create <b> multi-screen application</b> step-by-step.
      Code associated to the guide can be found <a target="blank" href = "https://github.com/wzslr321/flutter_guide"> here </a>.
      <b>Every pull-request and help to improve this repository is welcome and really appreciated.</b>
   </i>
@@ -29,22 +29,27 @@
   * How to use iOS-style widgets
 * Widgets
   * Table of most useful widgets is located below the Introduction
-* Packages and fonts usage
+* Packages and assets 
   * Pubspec.yaml file description 
   * Upload own fonts and images
 * Routes
 * State management 
   * Stateful widget 
   * Providers
-* HTTP requests
-  * Display JSON data on the screen 
-  * Authorization with Firebase
 
+<br/>
 
 ***
 
-## Introduction 
+<br/>
 
+<h3 align ="center"> Introduction</h3>
+
+#
+
+<br/>
+
+<br/>
 <p> I assume that you have already installed flutter and device/emulator configured, If not, check how to do it <a href ="https://flutter.dev/docs/get-started/install"> here </a>
 
 <br/>
@@ -151,12 +156,18 @@ In our code we can than use iOS style widgets <a href ="https://flutter.dev/docs
 <p>
 Unfortunetely it is impossible to test an application on iOS and Android without having both MacOS and Linux/Windows, so in this guide only <i> Material </i> widgets will be shown.
 </p>
+<br/>
 
 ***
 
-## Widgets 
+<br/>
+
+<h3 align ="center"> Widgets </h3>
+
+#
 
 <br/>
+
 <p align = "center"> <b> <i> Every widget's title is a reference to its official documentation, which is really great, in case when you know what you are looking for.  </i> </b> </p>
 <br/>
 
@@ -308,9 +319,13 @@ class MyHomePage extends StatelessWidget {
 
 #### Code with this example can be found <a href = "https://github.com/wzslr321/flutter_guide/tree/main/lib/reusable_widgets_example" > here </a>
 
+<br/>
+
 ***
 
-### Packages usage
+<br/>
+
+<h3 align ="center"> Packages and assets </h3>
 
 #
 
@@ -366,4 +381,14 @@ flutter:
     - assets/my_icon.png // path to our image or any other asset.
     - assets/background.png
 ```
+<br/>
+
+***
+
+<br/>
+
+<h3 align ="center"> Routes </h3>
+
+#
+
 <br/>
