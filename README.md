@@ -50,7 +50,7 @@
 <br/>
 
 <br/>
-<p> I assume that you have already installed flutter and device/emulator configured, If not, check how to do it <a href ="https://flutter.dev/docs/get-started/install"> here </a>
+<p> I assume that you already have installed flutter and device/emulator configured, If not, check how to do it <a href ="https://flutter.dev/docs/get-started/install"> here </a>
 
 <br/>
 
@@ -399,6 +399,8 @@ Routing in Flutter is really simple and in my opinion, well organised.
 
 At first, in our <b> main.dart </b> file, in <i> MaterialApp </i> we have to register them and set home screen, optionally unknownRoute also. 
 
+<br/>
+
 ```dart
 return MaterialApp(
   title: 'Flutter Guide',
@@ -416,6 +418,8 @@ return MaterialApp(
 
 > This is my project structure 
 
+<br/>
+
 ```bash
 --routes_example
   -- screens
@@ -429,6 +433,8 @@ return MaterialApp(
 
 To register our route, first we need to specify its name. The best way to do this is a `static const` - dart feature. It will prevent from misspelling the route in the code. We should do it at the beggining of our Stateless/Stateful widget. 
 
+<br/>
+
 ```dart
 class FirstScreen extends StatelessWidget {
   static const routeName = 'first-screen';
@@ -440,6 +446,8 @@ class FirstScreen extends StatelessWidget {
 <br/>
 
 Now, with help of our static const, we can register it in our previous <i> main.dart </i> code. 
+
+<br/>
 
 ```dart
 return MaterialApp(
@@ -466,6 +474,8 @@ With our routes registered properly, we can now use them in our code to make fun
 For this, we can use <b> Navigator </b>, and more specifically <b> <i> Navigator.of(context).pushNamed() </i> </b> in this case. 
 We can invoke this function for example, with help of simple button.
 
+<br/>
+
 ```dart
 ElevatedButton(
     child: Text("Second screen"),
@@ -481,4 +491,8 @@ ElevatedButton(
 It will display SecondScreen when we tap on a button and place it on a <b> Stack of screens </b>, and will automatically display an arrow button in AppBar, which gives a possibility to go back - to the previous screen. 
 <br/>
 <br/>
-<b> <i> Code for this example can be found <a href ="https://github.com/wzslr321/flutter_guide/tree/main/lib/routes_example"> here </a> 
+<br/>
+> <b> <i> Code for this example can be found <a href ="https://github.com/wzslr321/flutter_guide/tree/main/lib/routes_example"> here </a> 
+<br/>
+
+<p> Here are some cool articles, if you want to learn more about routing. <a href="https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade"> first article </a> | <a href="https://medium.com/flutter-community/flutter-push-pop-push-1bb718b13c31"> second article </a> | <a href ="https://medium.com/@JediPixels/flutter-navigator-pageroutebuilder-transitions-b05991f53069"> third article </a>
