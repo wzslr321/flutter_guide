@@ -520,6 +520,8 @@ There are a few built-in functions which trigger based on Widget's state. In a l
 
 <b> Example </b>
 
+<br/>
+
 ```dart
 class MyStatefulWidgetState extends State<MyStatefulWidget> {
 
@@ -534,4 +536,39 @@ class MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
   // (...)
 }
+```
+
+<br/>
+
+To manually call SetState() we can use introduced before - <b> setSate() {} </b>. <br/>
+In order to make code cleaner, it is good to define our function as <b> void </b> 
+<br/>
+
+<b> Example </b>
+
+<br/>
+
+```dart
+
+String _newText = "Hello" ;
+
+void _myFirstVoidFunc() {
+
+  setState() {
+    _newText = "Hello there!";
+  }
+
+  // void function doesn't return anything
+}
+
+Widget build(BuildContext context) {
+ return GestureDetector(
+    onTap: () {
+      setState(() {
+         _myFirstVoidFunc
+       });
+    },
+    child: Text("$_newText"),
+}
+
 ```
