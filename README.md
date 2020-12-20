@@ -496,3 +496,42 @@ It will display SecondScreen when we tap on a button and place it on a <b> Stack
 <br/>
 
 <p> Here are some cool articles, if you want to learn more about routing. <a href="https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade"> first article </a> | <a href="https://medium.com/flutter-community/flutter-push-pop-push-1bb718b13c31"> second article </a> | <a href ="https://medium.com/@JediPixels/flutter-navigator-pageroutebuilder-transitions-b05991f53069"> third article </a>
+<br/>
+
+***
+
+<br/>
+
+<h3 align ="center"> State Management</h3>
+
+#
+
+<br/>
+
+<p align="center"> <i> There are a few packages which includes state management, but in this section I am going to introduce, in my opinion, best one. </i> </p>
+
+#
+
+### Stateful Widget
+
+Before hopping into <b> Provider </b> package, it is importatnt to talk about stateful widget. If we want to manage our data only in one screen and we don't share it in any other screen we should use Stateful Widget, there is no need to use Provider in such a case. <i> Keep it local </i> if you are able to. <br/> <br/>
+
+There are a few built-in functions which trigger based on Widget's state. In a little bit more complex aplications, they become really useful and it is worth to learn about it <a href = "https://api.flutter.dev/flutter/widgets/State/State.html"> here </a> <br/>
+
+<b> Example </b>
+
+```dart
+class MyStatefulWidgetState extends State<MyStatefulWidget> {
+
+// (...)
+
+@override
+  void initState() {   // Called when this object is inserted into the tree.
+   print("Init State Test");
+}
+
+ @override
+  Widget build(BuildContext context) {
+  // (...)
+}
+```
