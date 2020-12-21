@@ -35,7 +35,7 @@
 * Routes
 * State management 
   * Stateful widget 
-  * Providers
+  * Provider package
 
 <br/>
 
@@ -572,3 +572,54 @@ Widget build(BuildContext context) {
 }
 
 ```
+
+
+#
+
+### Provider package
+
+<a href="https://pub.dev/packages/provider"> Provider </a> is an insane package to help with State Management! It gives a possibility to decide what part of widget we want to rebuild, using: <br/>
+* <a href="https://pub.dev/documentation/provider/latest/provider/Provider/of.html"> Provider.of </a> - basically, it rebuilds all of widgets in a widget tree if a change occurs.
+* <a href ="https://pub.dev/documentation/provider/latest/provider/Consumer-class.html"> Consumer </a> - lets us decide which part of widget tree we want to rebuild.
+* <a href="https://pub.dev/documentation/provider/latest/provider/Selector-class.html"> Selector </a> - Very similar to Consumer, I do recommend visit attached link if you want to learn more about the differences.
+<br/> 
+<br/>
+
+<b> How to use provider package: </b>
+
+<br/>
+
+> Project structure of incoming example.
+
+<br/>
+
+```bash
+--state_management_example
+  -- providers
+     -- counter_provider.dart
+  -- screens
+     -- achievements_screen
+        -- achievements_screen.dart
+     -- home_screen
+        -- home_screen.dart
+     -- page_not_found_screen.dart
+        -- page_not_found_screen.dart
+     -- profile_screen
+        -- profile_screen.dart
+  -- main.dart
+```
+
+<br/>
+
+* Declare it in pubspec.yaml, type <i> flutter pub get </i> in terminal afterwards
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^4.3.2+3 // Check latest version on pub.dev
+```
+* Import on top of the file
+```dart
+import 'package:provider/provider.dart';
+```
+
