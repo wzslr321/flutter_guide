@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import './screens/screen_first.dart';
-import './screens/screen_second.dart';
-import './screens/page-not-found.dart';
+import './screens/first_screen.dart';
+import './screens/second_screen.dart';
+import './screens/page_not_found_screen.dart';
 
 void main() {
   runApp(MyApp());
