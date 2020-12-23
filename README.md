@@ -1,9 +1,7 @@
 <h2 align = "center"> Flutter starter guide for newbies </h1>
 <p align = "center">
   <i>
-     It is intended for everyone who is <b>new </b> in Flutter. It covers its most useful widgets and  concepts.
-     First part of the tutorial shows examples with code sniipets, and defintions to make everything <b> as clear as possible. </b>
-     Second part sums up all the content introduced before and shows how to create <b> multi-screen application</b> step-by-step.
+     It is intended for everyone who is <b>new </b> in Flutter. It covers its most useful widgets and  concepts. Table of contents can be found below.
      Code associated to the guide can be found <a target="blank" href = "https://github.com/wzslr321/flutter_guide"> here </a>.
      <b>Every pull-request and help to improve this repository is welcome and really appreciated.</b>
   </i>
@@ -719,41 +717,10 @@ child:Consumer<Counter>(
 
 <br/>
 
-<p align="center"> Full code of this example can be found <a href="#"> here </a> </p>
+<p align="center"> Full code of this example can be found <a href="https://github.com/wzslr321/flutter_guide/tree/main/lib/state_management_example"> here </a> </p>
 
 <br/>
 
 ***
 
-<br/>
 
-<h3 align ="center"> Todo app example </h3>
-
-#
-
-<b> In this section I am going to show how to build a complete app, not bad looking, with two providers and 3 screens. It will include todo list, finished tasks history, user profile with information about finished tasks and user's level based on those.
-
-<br/>
-
-<b> Folder structure </b> 
-```bash
---app_example
-  -- providers
-     -- tasks_provider.dart
-     -- user_provider.dart
-  -- screens
-     -- home_screen
-        -- widgets
-        -- home_screen.dart
-     -- page_not_found_screen
-        -- page_not_found_screen.dart
-     -- profile_screen
-        -- widgets
-        -- profile_screen.dart
-     -- task_history_screen
-        -- widgets
-        -- task_history_screen
-  -- main.dart
-```
-
-<br/>
