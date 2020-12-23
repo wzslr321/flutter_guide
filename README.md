@@ -36,6 +36,7 @@
 * State management 
   * Stateful widget 
   * Provider package
+* <b> Todo App example </b>
 
 <br/>
 
@@ -106,7 +107,7 @@ First line `import 'package:flutter/material.dart'` is required, it gives a poss
 
 #
 
-  <b> Stateful </b> widget lets you display data that changes and update UI. Simplest method to do it is `setState` function, when it is triggered it acts like: <i> "Hey, something changed, rebuild is needed!". </i> It can be triggered in, for example `GestureDetector` widget.
+  <b> Stateful </b> widget lets you display data that changes and update UI. Simplest method to do it is `setState` function, when it is triggered it acts like: <i> "Hey, something changed, rebuild is needed!". </i> It can be triggered with, for example `GestureDetector` widget.
 
 
 <b> Example: </b> 
@@ -138,7 +139,7 @@ class _ClassNameGoesHereState extends State<ClassNameGoesHere> {
 
 <br/>
 
-  In the code above we use basic Stateful WIdget skeleton, which is always the same, so don't be scared. We declare variable count of type int, which by default is equal to 0. We display it as a child of <b> Gesture detector </b> in <b> Text </b> widget. GestureDetector lets us to use `onTap()` function where we decided to use `setState` function mentioned before. It tells the flutter *"Hey! variable count changed!"*. It notes this change and rebuilds data showing us a number increased by 1 with every tap!
+  In the code above we use basic Stateful WIdget skeleton, which is always the same, so don't be scared. If you have flutter extension and good IDE, when u type <b> stful </b> and hit enter, it should code this structure for you! We declare variable count of type int, which by default is equal to 0. We display it as a child of <b> Gesture detector </b> in <b> Text </b> widget. GestureDetector lets us to use `onTap()` function where we decided to use `setState` function mentioned before. It tells the flutter *"Hey! variable count changed!"*. It notes this change and rebuilds data showing us a number increased by 1 with every tap!
 
 <br/>
 
@@ -168,7 +169,7 @@ Unfortunetely it is impossible to test an application on iOS and Android without
 
 <br/>
 
-<p align = "center"> <b> <i> Every widget's title is a reference to its official documentation, which is really great, in case when you know what you are looking for.  </i> </b> </p>
+<p align = "center"> <b> <i> Every widget's title is a reference to its official documentation, which is incredibly good, in case when you know what you are looking for.  </i> </b> </p>
 <br/>
 
 
@@ -221,7 +222,7 @@ It is worth to mention that we can use `const` before our widgets, if we are sur
 ### We can also create our <b> Reusable Custom Widgets! </b> 
 <br/>
 
-Let's say that we have 3 exactly the same buttons in our application. The only difference is text isnide. With custom widget, we can split our code, <b> so it looks like this in those 3 spots: </b>
+Let's say that we have 3 exactly the same buttons in our application. The only difference is text inside. With custom widget, we can split our code, <b> so it looks like this in those 3 spots: </b>
 ```dart
 DefaultButtonWidgetFirst(
    textContent: "Hello world!",
@@ -267,7 +268,7 @@ const DefaultButtonWidgetFirst({
 
 <br/>
 
-<b> this keyword </b> refers to final variable we created before.
+<b> this keyword </b> refers to final variable created before.
 
 With named arguments, we than use this widget specyfing every agument by its name. Named arguments are not required by default! Although, we can set it to required with `@required` decorator from material package, so it looks like that: 
 ```dart
@@ -285,13 +286,11 @@ const DefaultButtonWidgetSecond({
 
 <br/>
 
-When we use a custom widget with un-named arguments, we declare arguments <b> in sequence </b>, so un-named arguments are useful only when we deal with small amount of them, and we are sure that we will remember their sequence.
+When we use a custom widget with un-named arguments, we declare its arguments <b> in sequence </b>, so un-named arguments are useful only when we deal with small amount of them, and we are sure that we will remember their sequence, because looking for it everytime is not too enjoyable.
 
 <br/>
 
-Now we can use this widget wherever we want. <br/>
-First we need to import a file with our widge on top of our file, where we want to use it, in my case : `import './widgets/custom_button.dart';`
-Now we can use it in our code:
+Next we  need to import it on top of the file, where we want to use it, in my case : `import './widgets/custom_button.dart';` and than use it in a widget tree!
 ```dart
 class MyHomePage extends StatelessWidget {
   @override
@@ -436,8 +435,8 @@ To register our route, first we need to specify its name. The best way to do thi
 <br/>
 
 ```dart
-class FirstScreen extends StatelessWidget {
-  static const routeName = 'first-screen';
+class SecondScreen extends StatelessWidget {
+  static const routeName = '/second-screen';
   
   // ...Rest of the code goes here
 }
@@ -445,7 +444,7 @@ class FirstScreen extends StatelessWidget {
 
 <br/>
 
-Now, with help of our static const, we can register it in our previous <i> main.dart </i> code. 
+Now, with help of created routeName, we can register it in our previous <i> main.dart </i> code. 
 
 <br/>
 
@@ -469,7 +468,7 @@ return MaterialApp(
 
 <br/>
 
-With our routes registered properly, we can now use them in our code to make functionality of displaying different screens.
+With routes registered properly, we can now use them in the code to make functionality of displaying different screens.
 <br/>
 For this, we can use <b> Navigator </b>, and more specifically <b> <i> Navigator.of(context).pushNamed() </i> </b> in this case. 
 We can invoke this function for example, with help of simple button.
@@ -508,7 +507,7 @@ It will display SecondScreen when we tap on a button and place it on a <b> Stack
 
 <br/>
 
-<p align="center"> <i> There are a few packages which includes state management, but in this section I am going to introduce, in my opinion, best one. </i> </p>
+<p align="center"> <i> There are a few packages which includes state management, but in this section I am going to introduce, in my opinion, best one - <a href="https://pub.dev/packages/provider"> Provider </a> </i> </p>
 
 #
 
