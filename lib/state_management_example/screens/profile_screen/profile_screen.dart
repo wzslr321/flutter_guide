@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../../providers/counter_provider.dart';
 
 class ProfileScreen extends StatelessWidget {
-  static const routeName = 'profile-screen';
+  static const routeName = '/profile-screen';
 
   @override
   Widget build(BuildContext context) {

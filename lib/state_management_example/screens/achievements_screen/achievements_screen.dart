@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../../providers/counter_provider.dart';
 
 class AchievementsScreen extends StatelessWidget {
-  static const routeName = 'achievements-screen';
+  static const routeName = '/achievements-screen';
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './second_screen.dart';
 
 class FirstScreen extends StatelessWidget {
-  static const routeName = 'first-screen';
+  static const routeName = '/first-screen';
 
   @override
   Widget build(BuildContext context) {
