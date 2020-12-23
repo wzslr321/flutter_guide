@@ -1,14 +1,14 @@
 import 'package:flutter/foundation.dart';
 
 class Counter with ChangeNotifier {
-  int counter = 0;
+  int _counter = 0;
 
-  int get counterValue {
-    return counter;
+  int get value {
+    return _counter;
   }
 
   void incrementCounter(){
-    counter++;
+    _counter++;
+    notifyListeners();
   }
-
 }

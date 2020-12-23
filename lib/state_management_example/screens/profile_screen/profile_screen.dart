@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/counter_provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   static const routeName = 'profile-screen';
@@ -10,7 +13,11 @@ class ProfileScreen extends StatelessWidget {
         title: Text("Profile"),
       ),
       body: Container(
-        child: Text("Hello"),
+        child:Consumer<Counter>(
+          builder: (_,counter,__){
+            return Text("Money count is: ${counter.value}");
+          },
+        ),
       ),
     );
   }
