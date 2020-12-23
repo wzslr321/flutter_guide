@@ -693,7 +693,7 @@ After that, we create provider's variable in the widget tree
 ```
 <br/>
 
-Now in our widget tree we can acces this variable and its methods. <br/>
+Now in our widget tree we can access this variable and its methods. <br/>
 
 ```dart
 Container(
@@ -702,3 +702,24 @@ Container(
     child: Text("Counter: ${_counter.value}"),
 )),
 ```
+
+<br/>
+
+We can also check counter value in another screen, using <b> Consumer </b> this time. <br/>
+
+```dart
+// We don't create variable like we did with Provider.of, just import files 
+// ... ( Widget tree ) 
+child:Consumer<Counter>(
+   builder: (_,counter,__){ // "_" is a way to tell that we won't use received value, because we don't need nothing except our counter here
+     return Text("Money count is: ${counter.value}");
+   },
+),
+// ...
+```
+
+<br/>
+
+<p align="center"> Full code of this example can be found <a href="#"> here </a> </p>
+
+
