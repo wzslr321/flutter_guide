@@ -35,7 +35,7 @@
 * Routes
 * State management 
   * Stateful widget 
-  * Providers
+  * Provider package
 
 <br/>
 
@@ -50,7 +50,7 @@
 <br/>
 
 <br/>
-<p> I assume that you have already installed flutter and device/emulator configured, If not, check how to do it <a href ="https://flutter.dev/docs/get-started/install"> here </a>
+<p> I assume that you already have installed flutter and device/emulator configured, If not, check how to do it <a href ="https://flutter.dev/docs/get-started/install"> here </a>
 
 <br/>
 
@@ -392,3 +392,313 @@ flutter:
 #
 
 <br/>
+
+Routing in Flutter is really simple and in my opinion, well organised. 
+
+<br/>
+
+At first, in our <b> main.dart </b> file, in <i> MaterialApp </i> we have to register them and set home screen, optionally unknownRoute also. 
+
+<br/>
+
+```dart
+return MaterialApp(
+  title: 'Flutter Guide',
+  home: // First screen will go here!
+   routes:{
+    // Most of the next here.
+   },
+   onUnknownRoute: (settings) {
+     return // And finally PageNotFoundScreen is going to be here!
+   },
+);
+```
+
+<br/>
+
+> This is my project structure 
+
+<br/>
+
+```bash
+--routes_example
+  -- screens
+     -- first_screen.dart
+     -- page_not_found_screen.dart
+     -- second_screen.dart
+  -- main.dart
+```
+
+<br/>
+
+To register our route, first we need to specify its name. The best way to do this is a `static const` - dart feature. It will prevent from misspelling the route in the code. We should do it at the beggining of our Stateless/Stateful widget. 
+
+<br/>
+
+```dart
+class FirstScreen extends StatelessWidget {
+  static const routeName = 'first-screen';
+  
+  // ...Rest of the code goes here
+}
+```
+
+<br/>
+
+Now, with help of our static const, we can register it in our previous <i> main.dart </i> code. 
+
+<br/>
+
+```dart
+return MaterialApp(
+  title: 'Flutter Guide',
+  home: FirstScreen(), // home screen is visible when our app start, we can specify only one. 
+    routes:{
+      SecondScreen.routeName:(ctx) => SecondScreen(),
+      // We access our static const like class method, after ' . ' 
+      // With received context (ctx) we than call our widget. 
+      // It is possible to register as many routes as we want here.
+    },
+    onUnknownRoute: (settings) {
+      return MaterialPageRoute(builder: (ctx) => PageNotFoundScreen());
+      // We can specify unknown route only once too. 
+      // It is mostly useful in web applications.  
+    },
+);
+```
+
+<br/>
+
+With our routes registered properly, we can now use them in our code to make functionality of displaying different screens.
+<br/>
+For this, we can use <b> Navigator </b>, and more specifically <b> <i> Navigator.of(context).pushNamed() </i> </b> in this case. 
+We can invoke this function for example, with help of simple button.
+
+<br/>
+
+```dart
+ElevatedButton(
+    child: Text("Second screen"),
+    onPressed:() {
+       Navigator.of(context).pushNamed(SecondScreen.routeName);
+       // To use SecondScreen.routeName we need to import this on top of the file. 
+    },
+),
+``` 
+
+<br/>
+
+It will display SecondScreen when we tap on a button and place it on a <b> Stack of screens </b>, and will automatically display an arrow button in AppBar, which gives a possibility to go back - to the previous screen. 
+<br/>
+<br/>
+<br/>
+> <b> <i> Code for this example can be found <a href ="https://github.com/wzslr321/flutter_guide/tree/main/lib/routes_example"> here </a> 
+<br/>
+
+<p> Here are some cool articles, if you want to learn more about routing. <a href="https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade"> first article </a> | <a href="https://medium.com/flutter-community/flutter-push-pop-push-1bb718b13c31"> second article </a> | <a href ="https://medium.com/@JediPixels/flutter-navigator-pageroutebuilder-transitions-b05991f53069"> third article </a>
+<br/>
+
+***
+
+<br/>
+
+<h3 align ="center"> State Management</h3>
+
+#
+
+<br/>
+
+<p align="center"> <i> There are a few packages which includes state management, but in this section I am going to introduce, in my opinion, best one. </i> </p>
+
+#
+
+### Stateful Widget
+
+Before hopping into <b> Provider </b> package, it is importatnt to talk about stateful widget. If we want to manage our data only in one screen and we don't share it in any other screen we should use Stateful Widget, there is no need to use Provider in such a case. <i> Keep it local </i> if you are able to. <br/> <br/>
+
+There are a few built-in functions which trigger based on Widget's state. In a little bit more complex aplications, they become really useful and it is worth to learn about it <a href = "https://api.flutter.dev/flutter/widgets/State/State.html"> here </a> <br/>
+
+<b> Example </b>
+
+<br/>
+
+```dart
+class MyStatefulWidgetState extends State<MyStatefulWidget> {
+
+// (...)
+
+@override
+  void initState() {   // Called when this object is inserted into the tree.
+   print("Init State Test");
+}
+
+ @override
+  Widget build(BuildContext context) {
+  // (...)
+}
+```
+
+<br/>
+
+To manually call SetState() we can use introduced before - <b> setSate() {} </b>. <br/>
+In order to make code cleaner, it is good to define our function as <b> void </b> 
+<br/>
+
+<b> Example </b>
+
+<br/>
+
+```dart
+
+String _newText = "Hello" ;
+
+void _myFirstVoidFunc() {
+
+  setState() {
+    _newText = "Hello there!";
+  }
+
+  // void function doesn't return anything
+}
+
+Widget build(BuildContext context) {
+ return GestureDetector(
+    onTap: () {
+      setState(() {
+         _myFirstVoidFunc
+       });
+    },
+    child: Text("$_newText"),
+}
+
+```
+
+
+#
+
+### Provider package
+
+<a href="https://pub.dev/packages/provider"> Provider </a> is an insane package to help with State Management! It gives a possibility to decide what part of widget we want to rebuild, using: <br/>
+* <a href="https://pub.dev/documentation/provider/latest/provider/Provider/of.html"> Provider.of </a> - basically, it rebuilds all of widgets in a widget tree if a change occurs.
+* <a href ="https://pub.dev/documentation/provider/latest/provider/Consumer-class.html"> Consumer </a> - lets us decide which part of widget tree we want to rebuild.
+* <a href="https://pub.dev/documentation/provider/latest/provider/Selector-class.html"> Selector </a> - Very similar to Consumer, I do recommend visit attached link if you want to learn more about the differences.
+<br/> 
+<br/>
+
+<b> How to use provider package: </b>
+
+<br/>
+
+> Project structure of incoming example.
+
+<br/>
+
+```bash
+--state_management_example
+  -- providers
+     -- counter_provider.dart
+  -- screens
+     -- achievements_screen
+        -- achievements_screen.dart
+     -- home_screen
+        -- home_screen.dart
+     -- page_not_found_screen.dart
+        -- page_not_found_screen.dart
+     -- profile_screen
+        -- profile_screen.dart
+  -- main.dart
+```
+
+<br/>
+
+* Declare it in pubspec.yaml, type <i> flutter pub get </i> in terminal afterwards
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^4.3.2+3 // Check latest version on pub.dev
+```
+* Import on top of the file
+```dart
+import 'package:provider/provider.dart';
+```
+
+* Create a file with class which is <a href ="https://medium.com/flutter-community/dart-what-are-mixins-3a72344011f3"> mixin </a> of <b> ChangeNotifier </b> and import `import 'package:flutter/foundation.dart';` which includes this mixin. <br/>
+
+```dart
+class Counter with ChangeNotifier {} 
+```
+
+<br/>
+
+<p align="center"> <b> <a href="https://dart.dev/guides/language/language-tour"> Dart </a> language knowledge becomes hardly useful here </b>
+
+<br/>
+
+Now we can declare our variables which we want to be changable with Provider package and add functionality that we want. To notify that we want rebuild widget which uses modified, in <b> void </b> function, variable we have to call `notifyListeners();` at the end of our function. <br/>
+<br/>
+
+<b> Here is simple example of Counter class, which lets us access counter value with <a href="https://dart.dev/guides/language/language-tour#getters-and-setters"> getter </a> and also increment it with void. <br/> 
+
+```dart
+import 'package:flutter/foundation.dart';
+
+class Counter with ChangeNotifier {
+  int _counter = 0; // "_" means it is private variable
+
+  int get value {
+    return _counter;
+  }
+
+  void incrementCounter(){
+    _counter++;
+    notifyListeners();
+  }
+}
+``` 
+
+<br/> 
+
+With this file we now have to register it in <b> main.dart </b>. Probably your app will have more than one provider, so it is good to register it with <b> MultiProvider </b>. There are a lot of ways to declare providers in MultiProvider, depending on your needs, but in this guide I will cover only one - <b> ChangeNotifierProvider </b>. Check Provider's readme <a href="https://pub.dev/packages/provider"> here </a> to learn more. <br/> <br/>
+
+```dart
+// Import file with ChangeNotifier created before
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => Counter()) // Counter is name of class with ChangeNotifier, created before
+      ],
+      child: MaterialApp( 
+        // Rest of the widget tree
+        // ...
+```
+
+<br/>
+
+Now our Provider is globally available and waits for us to use it! </br>
+
+First we have to import provider package in a file where we want to use it.
+`import 'package:provider/provider.dart';` and also file with provider registered before.  `import '../../providers/counter_provider.dart';`
+</br>
+
+After that, we create provider's variable in the widget tree 
+```dart
+ @override
+  Widget build(BuildContext context) {
+    Counter _counter = Provider.of<Counter>(context);
+    // ... Rest of the widget tree
+```
+<br/>
+
+Now in our widget tree we can acces this variable and its methods. <br/>
+
+```dart
+Container(
+  child: GestureDetector(
+    onTap: _counter.incrementCounter,
+    child: Text("Counter: ${_counter.value}"),
+)),
+```
