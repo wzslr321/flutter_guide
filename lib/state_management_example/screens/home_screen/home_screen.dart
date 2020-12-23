@@ -7,7 +7,7 @@ import '../profile_screen/profile_screen.dart';
 import '../../providers/counter_provider.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const routeName = 'home-screen';
+  static const routeName = '/home-screen';
 
   @override
   Widget build(BuildContext context) {
