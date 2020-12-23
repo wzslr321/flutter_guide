@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/counter_provider.dart';
 
 class AchievementsScreen extends StatelessWidget {
   static const routeName = 'achievements-screen';
@@ -10,7 +13,11 @@ class AchievementsScreen extends StatelessWidget {
         title: Text("Achievements"),
       ),
       body: Container(
-        child: Text("Hello"),
+        child:Consumer<Counter>(
+          builder: (_,counter,__){
+            return Text("Money count is: ${counter.value}");
+          },
+        ),
       ),
     );
   }
