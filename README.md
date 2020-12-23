@@ -722,4 +722,39 @@ child:Consumer<Counter>(
 
 <p align="center"> Full code of this example can be found <a href="#"> here </a> </p>
 
+<br/>
 
+***
+
+<br/>
+
+<h3 align ="center"> Todo app example </h3>
+
+#
+
+<b> In this section I am going to show how to build a complete app, not bad looking, with two providers and 3 screens. It will include todo list, finished tasks history, user profile with information about finished tasks and user's level based on those.
+
+<br/>
+
+<b> Folder structure </b> 
+```bash
+--app_example
+  -- providers
+     -- tasks_provider.dart
+     -- user_provider.dart
+  -- screens
+     -- home_screen
+        -- widgets
+        -- home_screen.dart
+     -- page_not_found_screen
+        -- page_not_found_screen.dart
+     -- profile_screen
+        -- widgets
+        -- profile_screen.dart
+     -- task_history_screen
+        -- widgets
+        -- task_history_screen
+  -- main.dart
+```
+
+<br/>
