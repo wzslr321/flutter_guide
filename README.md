@@ -34,8 +34,7 @@
 * State management 
   * Stateful widget 
   * Provider package
-* <b> Todo App example </b>
-
+  
 <br/>
 
 ***
@@ -717,7 +716,7 @@ child:Consumer<Counter>(
 
 <br/>
 
-<p align="center"> Full code of this example can be found <a href="https://github.com/wzslr321/flutter_guide/tree/main/lib/state_management_example"> here </a> </p>
+<p align="center"> Full code of this example can be found <a href="https://github.com/wzslr321/flutter_guide/tree/main/lib/state_management_example"> here </a> <br/> I also recommend to check out examples of applications <a href="https://flutter.github.io/samples/#"> here </a> </p>
 
 <br/>
 
