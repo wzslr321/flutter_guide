@@ -623,3 +623,82 @@ dependencies:
 import 'package:provider/provider.dart';
 ```
 
+* Create a file with class which is <a href ="https://medium.com/flutter-community/dart-what-are-mixins-3a72344011f3"> mixin </a> of <b> ChangeNotifier </b> and import `import 'package:flutter/foundation.dart';` which includes this mixin. <br/>
+
+```dart
+class Counter with ChangeNotifier {} 
+```
+
+<br/>
+
+<p align="center"> <b> <a href="https://dart.dev/guides/language/language-tour"> Dart </a> language knowledge becomes hardly useful here </b>
+
+<br/>
+
+Now we can declare our variables which we want to be changable with Provider package and add functionality that we want. To notify that we want rebuild widget which uses modified, in <b> void </b> function, variable we have to call `notifyListeners();` at the end of our function. <br/>
+<br/>
+
+<b> Here is simple example of Counter class, which lets us access counter value with <a href="https://dart.dev/guides/language/language-tour#getters-and-setters"> getter </a> and also increment it with void. <br/> 
+
+```dart
+import 'package:flutter/foundation.dart';
+
+class Counter with ChangeNotifier {
+  int _counter = 0; // "_" means it is private variable
+
+  int get value {
+    return _counter;
+  }
+
+  void incrementCounter(){
+    _counter++;
+    notifyListeners();
+  }
+}
+``` 
+
+<br/> 
+
+With this file we now have to register it in <b> main.dart </b>. Probably your app will have more than one provider, so it is good to register it with <b> MultiProvider </b>. There are a lot of ways to declare providers in MultiProvider, depending on your needs, but in this guide I will cover only one - <b> ChangeNotifierProvider </b>. Check Provider's readme <a href="https://pub.dev/packages/provider"> here </a> to learn more. <br/> <br/>
+
+```dart
+// Import file with ChangeNotifier created before
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => Counter()) // Counter is name of class with ChangeNotifier, created before
+      ],
+      child: MaterialApp( 
+        // Rest of the widget tree
+        // ...
+```
+
+<br/>
+
+Now our Provider is globally available and waits for us to use it! </br>
+
+First we have to import provider package in a file where we want to use it.
+`import 'package:provider/provider.dart';` and also file with provider registered before.  `import '../../providers/counter_provider.dart';`
+</br>
+
+After that, we create provider's variable in the widget tree 
+```dart
+ @override
+  Widget build(BuildContext context) {
+    Counter _counter = Provider.of<Counter>(context);
+    // ... Rest of the widget tree
+```
+<br/>
+
+Now in our widget tree we can acces this variable and its methods. <br/>
+
+```dart
+Container(
+  child: GestureDetector(
+    onTap: _counter.incrementCounter,
+    child: Text("Counter: ${_counter.value}"),
+)),
+```
