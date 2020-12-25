@@ -14,7 +14,7 @@
 </p>
 
 <p align = "center">
-  <b> <i> Show your suport by giving a :star: </b> </i>
+  <b> <i> Show your support by giving a :star: </b> </i>
 </p>
 
 ---
@@ -54,7 +54,7 @@
 
 ### Before start
 
-I really recommend to get basic knowledge in <b> Dart </b> language before before proceeding with this guide.
+I really recommend to get basic knowledge in <b> Dart </b> language before proceeding with this guide.
 Trying to learn Flutter without any knowledge of the Dart lang is very common mistake, which makes it harder. 
 <br/>
 Here are two sites I do recommend to get started with: 
