@@ -536,6 +536,11 @@ class MyStatefulWidgetState extends State<MyStatefulWidget> {
 
 <br/>
 
+Built-in functions introduced above are not reusable in another widgets, but there are <a href ="https://pub.dev/packages/flutter_hooks"> Flutter Hooks </a>, which are very similar to <i> React Hooks </i> and declared once, can be used in another widgets. <br/>
+<a href = "https://www.youtube.com/watch?v=A1DUBgIsCv8"> Here </a> is great video explaining how insanely useful <b> Flutter Hooks </b> are and how to use it. <br/>
+
+#
+
 To manually call SetState() we can use introduced before - <b> setSate() {} </b>. <br/>
 In order to make code cleaner, it is good to define our function as <b> void </b> 
 <br/>
@@ -572,7 +577,7 @@ Widget build(BuildContext context) {
 
 #
 
-### Provider package
+### Provider package // There is a new Riverpod package, which is actually better version of Provider, so I'd recommend to hop into Riverpod instead of Provider.  I am willing to make a section about it either. Provider is still a good option of course. 
 
 <a href="https://pub.dev/packages/provider"> Provider </a> is an insane package to help with State Management! It gives a possibility to decide what part of widget we want to rebuild, using: <br/>
 * <a href="https://pub.dev/documentation/provider/latest/provider/Provider/of.html"> Provider.of </a> - basically, it rebuilds all of widgets in a widget tree if a change occurs.
